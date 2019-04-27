@@ -8,27 +8,30 @@ class Solution(object):
             return len(s)
         sub = {}
         longest = 0
-        for i in range(0, len(s)):
+        
+        n = len(s)
+        for i in range(0, n):
             letter = s[i]
             sub[letter] = 1
+            
         maxCount = len(sub)
         sub.clear()
-        for i in range(0,len(s)):
-            for j in range(i,len(s)):
-                letter = s[j]
-                if(letter in sub.keys()):
-                    if(len(sub) == maxCount):
-                        return maxCount
-                    if(len(sub) > longest):
-                        longest = len(sub)
-                    sub.clear()
-                    break
-                else:
-                    sub[letter] = 1
-                    if(len(sub) > longest):
-                        longest = len(sub)
+        i = 0
+        j = 0
+        while i < n and j < n:
+            letter = s[j]
+            if(letter in sub.keys()):
+                if(len(sub) > longest):
+                    longest = len(sub)
+                if(len(sub) == maxCount):
+                    return maxCount
+                i = sub.get(letter) + 1
+                j = i
+                sub.clear()
+                continue
+            else:
+                sub[letter] = j
+                j += 1
+                if(len(sub) > longest):
+                    longest = len(sub)
         return longest
-            
-            
-            
-            
