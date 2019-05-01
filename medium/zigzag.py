@@ -26,8 +26,4 @@ class Solution(object):
             count += inc
         
         #concatenate all strings to form the answer  
-        ans = ""        
-        for i in range(len(arr)):
-            ans += arr[i]
-        
-        return ans
+        return "".join(arr)
