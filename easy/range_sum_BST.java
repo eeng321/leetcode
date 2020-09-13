@@ -15,7 +15,7 @@
  */
 class Solution {
     public int rangeSumBST(TreeNode root, int L, int R) {
-        return getSum(root, L, R);
+        return getSum(root, L, R); 
     }
     
     public int getSum(TreeNode root, int L, int R) {
