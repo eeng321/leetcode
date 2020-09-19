@@ -13,7 +13,7 @@ class Solution {
                 }
             }
         }
-        return stack.empty() ? true : false;
+        return stack.empty();
     }
     
     public boolean isOpenBracket(char c) {
